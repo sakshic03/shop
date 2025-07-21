@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Paws - Pet Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .navbar {
+      background: #4CAF50;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar h1 {
+      float: left;
+      color: white;
+      margin: 0;
+    }
+
+    .navbar a {
+      float: right;
+      color: white;
+      text-decoration: none;
+      padding: 14px 16px;
+    }
+
+    .navbar a:hover {
+      background: #45a049;
+      border-radius: 5px;
+    }
+
+    .h {
+      position: relative;
+      text-align: center;
+      padding: 60px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .h video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .h .content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      color: white;
+    }
+
+    .h h2 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .h p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .shop {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .animated-text {
+      font-size: 30px;
+      font-weight: bold;
+      color: #4fc66f;
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      letter-spacing: 3px;
+    }
+
+    .animated-text span {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeIn 0.5s forwards;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .contact-form {
+      background: #ffffff;
+      max-width: 600px;
+      margin: 20px auto 50px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var breed = document.getElementById("breed").value;
+      var food = document.getElementById("pet-food").value;
+      var accessories = document.getElementById("pet-Accessories").value;
+      var message = document.getElementById("message").value;
+
+      var phoneNumber = "8379984588";
+      var url = "https://wa.me/91" + phoneNumber + "?text=" 
+        + encodeURIComponent(
+          "Dog Inquiry from PUP Paradise:\n\n" +
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n" +
+          "Phone: " + phone + "\n" +
+          "Breed: " + breed + "\n" +
+          "Pet Food: " + food + "\n" +
+          "Accessories: " + accessories + "\n" +
+          "Message: " + message
+        );
+
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar, Video Header, Dogs, Food, Accessories Sections (Already provided above) -->
+  <!-- ... KEEP ALL THE CONTENT ABOVE ... -->
+<div class="navbar">
+    <h1>PUP PARADISE</h1>
+    <a href="#contact">Contact</a>
+    <a href="#Pet-Accessories">Pet-Accessories</a>
+    <a href="#Pet-Food">Pet-Food</a>
+    <a href="#shop">Shop</a>
+    <a href="#home">Home</a>
+  </div>
+
+  <div class="h" id="home">
+    <video autoplay muted loop>
+      <source src="https://cdn.pixabay.com/video/2016/08/22/4740-179738694_large.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h2><b>Welcome to PUP Paradise Pet Shop!</b></h2>
+      <p>Your one-stop destination for happy and healthy pets.</p>
+      <p><strong>Unleash joy with your perfect pup – only at our pet shop :)</strong></p>
+    </div>
+  </div>
+
+  <h2 style="text-align: center; padding-top: 30px;" class="animated-text">
+    <span style="animation-delay: 0s;">Find</span>
+    <span style="animation-delay: 0.5s;">Your</span>
+    <span style="animation-delay: 1s;">Furry</span>
+    <span style="animation-delay: 1.5s;">Best</span>
+    <span style="animation-delay: 2s;">Friend</span>
+    <span style="animation-delay: 2.5s;">Today!!</span>
+  </h2>
+
+  
+  <div class="shop" id="shop">   
+    <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Berger_allemand_en_montagne_2.jpg" alt="German Shepherd">
+        <h3>German Shepherd</h3><p>₹2,000</p>
+    </div>
+    <div class="item">
+      <img src="https://spotpet.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fm5ehn3s5t7ec%2F3LlwQXcjlcCtNFqg7rswmx%2F0f268311a5bf518cc72fa1b5a3f957b1%2FBulldog_Price.jpeg&w=1920&q=75" alt="dog">
+        <h3>Bulldog</h3><p>₹3,000</p>
+    </div>
+    <div class="item">
+      <img src="https://s.yimg.com/ny/api/res/1.2/GgMPeLX7kzi25Yca8BB44Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD04Mjg7Y2Y9d2VicA--/https://media.zenfs.com/en/parade_pets_articles_328/556d4004b144f07b61a3f0b1e7c7825a" alt="dog">
+        <h3>Golden Retriever</h3><p>₹5,000</p>
+    </div>
+    <div class="item">
+      <img src="https://spotpet.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fm5ehn3s5t7ec%2F2xBalK75br2nBzuUIfkaTd%2Fbc8ea863c22806beb9832e9fcbc4cafb%2FRottweiler_Price.webp&w=1920&q=75" alt="dog">
+        <h3>Rottweiler</h3><p>₹100,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/cocker_spaniel_1.jpg?v=1645179256" alt="dog">
+        <h3>Cocker Spaniel</h3><p>₹10,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/Beagle_1.jpg?v=1645179197" alt="dog">
+        <h3>Beagle</h3><p>₹56,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/Shih-Tzus_1.jpg?v=1645180171" alt="dog">
+        <h3>Shih Tzus</h3><p>₹21,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/Pomeranian.jpg?v=1645179919" alt="dog">
+        <h3>Pomeranian</h3><p>₹50,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/Boxer.jpg?v=1645179488" alt="dog">
+        <h3>Boxer</h3><p>₹52,300</p>
+    </div>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1590419690008-905895e8fe0d?fm=jpg&q=60&w=3000" alt="dog">
+        <h3>Husky</h3><p>₹300,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/Labrador.jpg?v=1645179151" alt="dog">
+        <h3>Labrador</h3><p>₹300,000</p>
+    </div>
+    <div class="item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwyM5QGOGrdHRoWCVR6tIVueRwigUhdLtFkA&s" alt="dog">
+        <h3>Great Dane</h3><p>₹200,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0255/7424/4445/files/image8_480x480.jpg?v=1651130484" alt="dog">
+        <h3>Pug</h3><p>₹2,500</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0255/7424/4445/files/image10_480x480.jpg?v=1651136991" alt="dog">
+        <h3>Dachshund</h3><p>₹25,000</p>
+    </div>
+    <div class="item">
+      <img src="https://cdn.shopify.com/s/files/1/0255/7424/4445/files/image11_480x480.jpg?v=1651138024" alt="dog">
+        <h3>Indies</h3><p>₹1,000</p>
+    </div>
+  </div>
+
+  
+  <h2 style="text-align: center; padding-top: 30px;" class="animated-text">
+   <span style="animation-delay: 0s;">PET</span>
+   <span style="animation-delay: 0.5s;">FOOD</span>
+   </h2>
+  <div class="shop" id="Pet-Food">
+    <div class="item">
+        <img src="https://cdn.shopify.com/s/files/1/0613/5211/6404/products/PK2022MaxiAdult-1.jpg?v=1674469863" alt="Pet-Food">
+        <h3>Royal Canin</h3>
+    </div>
+    <div class="item">
+        <img src="https://images-cdn.ubuy.co.in/634d0fd7b40f3d3fd01f6f7c-pedigree-complete-nutrition-adult-dry.jpg" alt="Pet-Food">
+        <h3>Pedigree</h3>
+    </div>
+    <div class="item">
+        <img src="https://cdn.shopify.com/s/files/1/0613/5211/6404/products/jAuSs7v8Jd.jpg?v=1667886959" alt="Pet-Food">
+        <h3>Drools</h3>
+    </div>
+    <div class="item">
+        <img src="https://m.media-amazon.com/images/I/81ehukXhwvL._UF350,350_QL80_.jpg" alt="Pet-Food">
+        <h3>Hill’s Science Diet</h3>
+    </div>
+    <div class="item">
+        <img src="https://www.acana.com/dw/image/v2/BFDW_PRD/on/demandware.static/-/Sites-acana-na-master-catalog/default/dw57a2044d/ACA%20Premium%20Pate%20Dog%20Food/ACANA%20Dog%20Premium%20Pate%20Poultry%20Recipe%20New%20Image%20USA-1.png?sw=1200" alt="Pet-Food">
+        <h3>Acana</h3>
+    </div>
+    <div class="item">
+        <img src="https://petindiaonline3.s3.ap-south-1.amazonaws.com/upload_product/617_07022022070016000000_pic1.jpg" alt="Pet-Food">
+        <h3>Arden Grange</h3>
+    </div>
+    <div class="item">
+        <img src="https://cdn.dotpe.in/longtail/store-items/3776609/sCmNwkLS.webp" alt="Pet-Food">
+        <h3>Purepet</h3>
+    </div>
+    <div class="item">
+        <img src="https://m.media-amazon.com/images/I/61b1q6N3dsL.jpg" alt="Pet-Food">
+        <h3>Canine Creek</h3>
+    </div>
+    <div class="item">
+        <img src="https://cdn1.sgliteasset.com/asiapets/images/product/product-3969556/dyc8bR2f65aa95728310d_1705678194.jpg" alt="Pet-Food">
+        <h3>Meat Up</h3></div>
+    <div class="item">
+     <img src="https://www.farmina.com/fotoprodotti/429_23_nd-quinoa-adult-digestion-[400x600pxl]@img_farmina_site.png" alt="Pet-Food">
+        <h3>Farmina N&D</h3>
+    </div>
+  </div>
+
+   <h2 style="text-align: center; padding-top: 30px;" class="animated-text">
+   <span style="animation-delay: 0s;">PET</span>
+   <span style="animation-delay: 0.5s;">ACCESSORIES</span>
+   </h2>
+  <div class="shop" id="Pet-Accessories">
+    <div class="item">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Q1E_OC976z-Hx9Pov-_pkn9D84xUn0vyLgH2MZvW2mgCKAriWAYA2q0Oa29wZTixi3M&usqp=CAU" alt="Pet-Accessories">
+        <h3>Dog House</h3>
+    </div>
+    <div class="item">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNWK7XOGxzvhIhn4-bwqFymQpLHSfPmYZCw&s" alt="Pet-Accessories">
+        <h3>Bowls</h3>
+    </div>
+    <div class="item">
+            <img src="https://m.media-amazon.com/images/I/81SrAcdIKtL.jpg" alt="Pet-Accessories">
+        <h3>Body Belt</h3>
+    </div>
+    <div class="item">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPy5PLZ5_b_MNeddaBTcuxfcoWatLPM8aeYjLJoy5ve-JdwxVoS5_qufwVkBxqng7D-4&usqp=CAU" alt="Pet-Accessories">
+        <h3>Chew Toys</h3>
+    </div>
+    <div class="item">
+                <img src="https://images.meesho.com/images/products/473033941/h7dbn_512.webp" alt="Pet-Accessories">
+        <h3>Dog Beds</h3>
+    </div>
+  </div>
+  <!-- CONTACT SECTION -->
+  <div id="contact">
+    <div class="footer">
+      <p>Contact us at: info@happypaws.com | Phone: 8379984587</p>
+      <p>&copy; 2025 PUP Paradise. All rights reserved.</p>
+    </div>
+
+    <div class="contact-form">
+      <h2><b><u>Dog Inquiry</u></b></h2>
+      <form onsubmit="sendToWhatsApp(); return false;">
+        <label>Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label>Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label>Choose Breed</label><br>
+        <select id="breed" name="breed" required>
+          <option value="">Select a dog breed</option>
+          <option>German Shepherd</option>
+          <option>Bulldog</option>
+          <option>Golden Retriever</option>
+          <option>Rottweiler</option>
+          <option>Cocker Spaniel</option>
+          <option>Beagle</option>
+          <option>Shih Tzus</option>
+          <option>Pomeranian</option>
+          <option>Boxer</option>
+          <option>Husky</option>
+          <option>Great Dane</option>
+          <option>Pug</option>
+          <option>Dachshund</option>
+          <option>Labrador</option>
+          <option>Indies</option>
+        </select><br><br>
+
+        <label>Choose Pet-Food</label><br>                                           
+        <select id="pet-food" name="pet-food">
+          <option value="">Select a dog Pet-Food</option>
+          <option>Royal Canin</option>
+          <option>Pedigree</option>
+          <option>Drools</option>
+          <option>Hill’s Science Diet</option>
+          <option>Acana</option>
+          <option>Arden Grange</option>
+          <option>Purepet</option>
+          <option>Canine Creek</option>
+          <option>Meat Up</option>
+          <option>Farmina N&D</option>
+        </select><br><br>
+
+        <label>Choose Pet-Accessories</label><br>                                           
+        <select id="pet-Accessories" name="pet-Accessories">
+          <option value="">Select a pet Accessory</option>
+          <option>Dog House</option>
+          <option>Bowls</option>
+          <option>Body Belt</option>
+          <option>Chew Toys</option>
+          <option>Dog Beds</option>
+        </select><br><br>
+
+        <label>Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message here..."></textarea>
+
+        <button type="submit">Submit via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
